@@ -1,0 +1,49 @@
+/* report.css | print styling for the PDF reports (used by lib/report.py) */
+@page { size: Letter; margin: 0.65in 0.65in 0.75in 0.65in; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10pt; line-height: 1.45; color: #1f1f1f;
+  max-width: 7.2in; margin: 0 auto; background: #fff;
+}
+.cover { border-bottom: 3px solid #2a78d6; margin-bottom: 14pt; padding-bottom: 6pt; }
+h1 { font-size: 21pt; margin: 0 0 3pt 0; letter-spacing: -0.2pt; }
+.sub { color: #52514e; font-size: 9.5pt; margin: 0; }
+h2 { font-size: 13.5pt; color: #184f95; margin: 20pt 0 7pt; padding-bottom: 3pt;
+     border-bottom: 1px solid #d8dee8; break-after: avoid; }
+h2.newpage { break-before: page; }
+h3 { font-size: 11pt; margin: 13pt 0 5pt; break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+ul { padding-left: 17pt; } li { margin-bottom: 3pt; }
+code { font-family: Menlo, Consolas, monospace; font-size: 8.8pt; background: #f3f5f8; padding: 1px 4px; border-radius: 3px; }
+
+/* KPI tiles */
+.kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(1.62in, 1fr)); gap: 7pt; margin: 8pt 0 12pt; }
+.kpi { border: 1px solid #e1e0d9; border-radius: 6px; padding: 7pt 9pt; background: #fcfcfb; break-inside: avoid; }
+.kl { font-size: 7.8pt; color: #52514e; text-transform: uppercase; letter-spacing: .3pt; }
+.kv { font-size: 15pt; font-weight: 600; margin: 2pt 0 1pt; color: #0b0b0b; }
+.kn { font-size: 7.8pt; color: #898781; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 12pt; font-size: 8.8pt; break-inside: auto; }
+table.small { font-size: 8pt; }
+caption { caption-side: top; text-align: left; font-weight: 600; font-size: 9pt; color: #0b0b0b; padding-bottom: 4pt; }
+th { text-align: left; background: #eef3fa; color: #184f95; font-weight: 600; padding: 4pt 6pt; border-bottom: 1px solid #c3c2b7; }
+td { padding: 3.5pt 6pt; border-bottom: 1px solid #ecebe6; vertical-align: top; }
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr { break-inside: avoid; }
+td.ok { color: #006300; font-weight: 600; white-space: nowrap; }
+td.bad { color: #b52e2e; font-weight: 600; white-space: nowrap; }
+td.warn { color: #8a5a00; font-weight: 600; white-space: nowrap; }
+
+/* Figures */
+figure { margin: 8pt 0 12pt; break-inside: avoid; text-align: center; }
+figure img { max-width: 100%; }
+figcaption { font-size: 8.5pt; color: #52514e; margin-top: 3pt; text-align: left; }
+
+/* Callouts */
+.callout { border-left: 3px solid #2a78d6; background: #f4f8fd; padding: 6pt 9pt; margin: 8pt 0 12pt; font-size: 9.2pt; break-inside: avoid; }
+.callout.warn { border-color: #eda100; background: #fdf8ec; }
+.callout.good { border-color: #0ca30c; background: #f1f9f1; }
+
+@media screen { body { padding: 32px 16px; } }

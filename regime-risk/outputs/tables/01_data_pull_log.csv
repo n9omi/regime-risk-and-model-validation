@@ -1,0 +1,4 @@
+series,description,unit,source,first,last,rows
+WTI,"WTI crude, Cushing",$/bbl,GitHub mirror of EIA (DCOILWTICO),1986-01-02,2026-09-22,9507
+Brent,"Brent crude, Europe",$/bbl,GitHub mirror of EIA (DCOILBRENTEU),1987-05-20,2026-09-22,9092
+HenryHub,Henry Hub natural gas,$/MMBtu,GitHub mirror of EIA (DHHNGSP),1997-01-07,2026-09-22,5692

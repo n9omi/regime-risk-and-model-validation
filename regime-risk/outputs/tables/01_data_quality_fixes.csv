@@ -1,0 +1,6 @@
+date,series,issue,value,action
+2020-04-20,WTI,non-positive price,-36.98,set to missing
+,WTI,short gap (1-2 days),136.0,carried last price forward
+,Brent,short gap (1-2 days),56.0,carried last price forward
+,HenryHub,short gap (1-2 days),97.0,carried last price forward
+,all,dates with a missing series after filling,55.0,dropped date
