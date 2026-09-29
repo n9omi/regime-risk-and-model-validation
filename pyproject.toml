@@ -1,0 +1,37 @@
+# Makes the tested models in lib/ installable as the Python package `regime_risk`, so other projects can
+# import them instead of copying code:
+#     pip install "regime-risk @ git+https://github.com/n9omi/regime-risk-and-model-validation.git"
+#     from regime_risk import regimes, volatility, var_es, validation
+# The scripts in this repo keep importing `lib` directly; nothing changes for them.
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regime-risk"
+version = "1.0.0"
+description = "Markov-switching regimes, GARCH/HAR volatility, VaR/ES backtests and overfitting checks for commodity returns"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Naomi Tinga" }]
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=3.0",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "plotly>=5.22",
+    "requests>=2.31",
+    "openpyxl>=3.1",
+    "markdown>=3.5",
+    "playwright>=1.44",
+]
+
+[project.urls]
+Repository = "https://github.com/n9omi/regime-risk-and-model-validation"
+
+[tool.setuptools]
+packages = ["regime_risk"]
+package-dir = { "regime_risk" = "lib" }
+
+[tool.setuptools.package-data]
+regime_risk = ["report.css"]

@@ -125,6 +125,7 @@ open docs/index.html # the dashboard (macOS; on Windows/Linux open it in any bro
 - **Changing assumptions:** edit `config.py` (positions, confidence levels, windows, refit frequency, the strategy grid, CV settings). Nothing is hard-coded in the scripts.
 - **Optional FRED API key:** FRED data downloads without a key. To use the official API, copy `.env.example` to `.env` and add `FRED_API_KEY=your_key`. `.env` is git-ignored.
 - **"SSL certificate" errors** usually mean a work or university network is intercepting secure traffic. Switch to home Wi-Fi, or download the CSV by hand and save it in `data/raw/` with the name shown in the error; the scripts use it as-is.
+- **Use the models in another project:** the `lib/` folder installs as the package `regime_risk` (`pip install "regime-risk @ git+https://github.com/n9omi/regime-risk-and-model-validation.git"`, then `from regime_risk import regimes, volatility, var_es, validation`). [climate-shock-energy-risk](https://github.com/n9omi/climate-shock-energy-risk) is built this way.
 - **Tests:** `.venv/bin/python -m pytest -q` runs 15 checks: simulation-based parameter recovery, known-answer tests for every backtest statistic, and a no-look-ahead test for every strategy.
 
 | After running, open | Contents |
@@ -200,7 +201,7 @@ regime-risk-and-model-validation/
 ├── config.py               every assumption: data, positions, windows, strategy grid, CV settings
 ├── setup.sh / run.sh       install once / run everything
 ├── make_dashboard.py       builds docs/index.html and the screenshots
-├── requirements.txt
+├── requirements.txt, pyproject.toml   pyproject.toml makes lib/ installable as `regime_risk`
 ├── lib/                    the models, written from scratch
 │   ├── regimes.py          Markov switching: Hamilton filter, Kim smoother, EM, mixture VaR/ES
 │   ├── volatility.py       EWMA, GARCH(1,1)-t MLE, HAR-RV, QLIKE, Diebold-Mariano, Mincer-Zarnowitz

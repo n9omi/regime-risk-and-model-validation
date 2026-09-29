@@ -9,3 +9,6 @@ data/
 __pycache__/
 .pytest_cache/
 .DS_Store
+# packaging by-products (pip install .)
+build/
+*.egg-info/
